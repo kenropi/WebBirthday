@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+
+    background: url("background.jpg") no-repeat center center fixed;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+}
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+h1 {
+    color: #ff4081;
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    background: #ff4081;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #e91e63;
+    transform: scale(1.1);
+}
+
+.hidden {
+    display: none;
+}
+
+#surprise {
+    margin-top: 20px;
+    animation: popUp 1s ease forwards;
+}
+
+.big-text {
+    font-size: 28px;
+    color: #ff4081;
+}
+
+@keyframes popUp {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.balloon {
+    position: absolute;
+    bottom: -100px; /* mulai dari bawah layar */
+    font-size: 30px;
+    animation: floatBalloon linear forwards;
+}
+
+@keyframes floatBalloon {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-60vh) translateX(20px);
+    }
+    100% {
+        transform: translateY(-120vh) translateX(-20px);
+        opacity: 0;
+    }
+}
