@@ -1,23 +1,43 @@
-body {
+html, body {
     margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
     font-family: Arial, sans-serif;
 
-    background: url("background.jpg") no-repeat center center fixed;
-    background-size: cover;
+    background: url("background.png") no-repeat center center;
+    background-size: cover;   /* full layar */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll; /* lebih aman untuk HP */
 
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+
+    min-height: 100vh;
     text-align: center;
-    overflow: hidden;
+    overflow-x: hidden; /* hanya sembunyikan horizontal */
 }
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 0;
+}
+
 .container {
-    background: white;
+    background: rgba(255, 255, 255, 0.9); /* semi transparan biar background keliatan */
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0 15px 30px rgba(0,0,0,0.2);
     animation: fadeIn 1.5s ease-in-out;
+    position: relative;
+    z-index: 1; /* container tetap di atas overlay tapi dibawah balon */
 }
 
 h1 {
@@ -71,10 +91,11 @@ button:hover {
 }
 
 .balloon {
-    position: absolute;
-    bottom: -100px; /* mulai dari bawah layar */
+    position: fixed; /* ganti dari absolute */
+    bottom: -100px;
     font-size: 30px;
     animation: floatBalloon linear forwards;
+    z-index: 2;
 }
 
 @keyframes floatBalloon {

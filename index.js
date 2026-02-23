@@ -3,6 +3,8 @@ const surprise = document.getElementById("surprise");
 
 btn.addEventListener("click", () => {
 
+    setInterval(createBalloon, 800);
+
     // Show message
     surprise.classList.remove("hidden");
 
@@ -13,10 +15,10 @@ btn.addEventListener("click", () => {
         origin: { y: 0.6 }
     });
 
-    // Floating hearts
-    for (let i = 0; i < 20; i++) {
-        createHeart();
-    }
+    // Floating balon
+for (let i = 0; i < 15; i++) {
+    createBalloon();
+}
 
     btn.style.display = "none";
 });
