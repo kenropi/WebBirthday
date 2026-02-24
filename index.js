@@ -26,7 +26,7 @@ for (let i = 0; i < 15; i++) {
 function createBalloon() {
     const balloon = document.createElement("div");
     balloon.classList.add("balloon");
-    balloon.innerText = "🎈";
+    balloon.innerText = "🎈,";
 
     // posisi random horizontal
     balloon.style.left = Math.random() * 100 + "vw";
